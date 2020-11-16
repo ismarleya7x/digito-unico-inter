@@ -30,7 +30,7 @@ public class TesteConfig implements CommandLineRunner {
 		Usuario u3 = new Usuario(null, "Maria", "teste2@teste.com");
 		Usuario u4 = new Usuario(null, "José", "teste3@teste.com");
 		
-		usuarioRepository.saveAll(Arrays.asList(u1));
+		usuarioRepository.saveAll(Arrays.asList(u1, u2, u3, u4));
 		
 		
 		
