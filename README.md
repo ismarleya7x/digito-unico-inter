@@ -76,3 +76,7 @@ Caso queira associar o cálculo a um usuário, basta informar a ID deste usúari
   }
 }
 ```
+
+### Testes online
+
+Você pode executar testes online via Heroku com a URL: https://digito-unico-inter.herokuapp.com/
