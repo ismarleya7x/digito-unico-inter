@@ -45,10 +45,7 @@ Com isso tenha o **resultado**:
 {
   "numero": "1234",
   "repeticao": 2,
-  "resultado": 2,
-  "usuario": {
-      null
-  }
+  "resultado": 2
 }
 ```
 
@@ -63,20 +60,21 @@ Caso queira associar o cálculo a um usuário, basta informar a ID deste usúari
 }
 ```
 
-**Resultado**:
+Caso tenha associado um dígito único a um usuário, ele será apresentado na pesquisa de usuários:
 ```json
-{
-  "numero": "1234",
-  "repeticao": 2,
-  "resultado": 2,
-  "usuario": {
-    "id": 1,
-    "nome": "Usuario Teste",
-    "email": "teste@msn.com"
+  {
+    "id": 2,
+    "nome": "Ismarley",
+    "email": "teste@teste.com",
+    "digito": [
+      {
+        "numero": "1234",
+        "repeticao": 2,
+        "resultado": 2
+      }
+    ]
   }
-}
 ```
 
 ### Testes online
-
 Você pode executar testes online via Heroku com a URL: https://digito-unico-inter.herokuapp.com/
