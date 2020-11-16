@@ -40,23 +40,6 @@ public class DigitoUnicoResource {
 		
 		return ResponseEntity.ok().body(list);
 	}
-	
-	@ApiOperation(value="Retorna os cálculos feitos para um usuário via ID!")
-	@GetMapping(value = "/{idUsuario}")
-	public ResponseEntity<List<DigitoUnico>> findById(@PathVariable Long idUsuario){
-		List<DigitoUnico> list = service.findAll();
-		
-		List<DigitoUnico> digitos = new ArrayList<>();
-		
-		for(DigitoUnico digito : list) {
-			Long digId = digito.getUsuario().getId() != null ? digito.getUsuario().getId() : 0L;
-			if(digId.equals(idUsuario) && !digId.equals(0L)) {
-				digitos.add(digito);
-			}
-		}
-		
-		return ResponseEntity.ok().body(digitos);
-	}
 
 	@ApiOperation(value="Realiza um cálculo novo!")
 	@PostMapping
@@ -82,7 +65,7 @@ public class DigitoUnicoResource {
 	}
 
 	private Usuario recuperaDadosUsuario(Long id) {
-		Usuario obj = serviceUsuario.findById(id);
+		Usuario obj = serviceUsuario.findById(id, true);
 		
 		return obj;
 	}

@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 public class DigitoUnico implements Serializable {
@@ -23,6 +23,9 @@ public class DigitoUnico implements Serializable {
 	private Integer repeticao;
 	private Integer resultado;
 
+	@JsonBackReference
+	@ManyToOne()
+	@JoinColumn(name = "USER_ID")
 	private Usuario usuario;
 
 	public DigitoUnico() {

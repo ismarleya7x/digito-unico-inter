@@ -4,13 +4,15 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Usuario implements Serializable{
@@ -20,10 +22,15 @@ public class Usuario implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Column(length = 2048)
 	private String nome;
+	
+	@Column(length = 9999)
 	private String email;
 	
-
+	@JsonManagedReference
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+	private List<DigitoUnico> digito = new ArrayList<>();
 	
 	public Usuario() {}
 
@@ -31,6 +38,15 @@ public class Usuario implements Serializable{
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
+	}
+	
+
+	public Usuario(Long id, String nome, String email, List<DigitoUnico> digito) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.email = email;
+		this.digito = digito;
 	}
 
 	public Long getId() {
@@ -55,6 +71,14 @@ public class Usuario implements Serializable{
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public List<DigitoUnico> getDigito() {
+		return digito;
+	}
+
+	public void setDigito(List<DigitoUnico> digito) {
+		this.digito = digito;
 	}
 
 	

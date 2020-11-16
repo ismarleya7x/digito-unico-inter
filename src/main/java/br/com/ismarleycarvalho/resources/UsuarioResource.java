@@ -39,7 +39,7 @@ public class UsuarioResource {
 	@ApiOperation(value="Retorna um usuário a partir do ID informado!")
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Usuario> findById(@PathVariable Long id){
-		Usuario obj = service.findById(id);
+		Usuario obj = service.findById(id, false);
 		
 		return ResponseEntity.ok().body(obj);
 	}
