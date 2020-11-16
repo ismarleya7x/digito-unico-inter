@@ -2,7 +2,7 @@
 
 ### Aplicação SpringBoot construída para o teste do Banco Inter
 
-![Badge](https://img.shields.io/static/v1?label=Springboot&message=Framework&color=green&style=for-the-badge&logo=Spring) ![Badge](https://img.shields.io/static/v1?label=Postman&message=RestAPI&color=orange&style=for-the-badge&logo=Postman) ![Badge](https://img.shields.io/static/v1?label=Swagger&message=DOCS&color=green&style=for-the-badge&logo=Swagger) ![Badge](https://img.shields.io/static/v1?label=Java 11&message=DOCS&color=red&style=for-the-badge&logo=Java)
+![Badge](https://img.shields.io/static/v1?label=Springboot&message=Framework&color=green&style=for-the-badge&logo=Spring) ![Badge](https://img.shields.io/static/v1?label=Postman&message=RestAPI&color=orange&style=for-the-badge&logo=Postman) ![Badge](https://img.shields.io/static/v1?label=Swagger&message=DOCS&color=green&style=for-the-badge&logo=Swagger)
 
 ___
 
