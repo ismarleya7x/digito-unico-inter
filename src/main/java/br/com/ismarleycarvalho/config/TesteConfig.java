@@ -25,7 +25,7 @@ public class TesteConfig implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		Usuario u1 = new Usuario(null, "Ismarley", "ismarley_2005@msn.com");
+		Usuario u1 = new Usuario(null, "Ismarley", "teste@teste.com");
 		
 		usuarioRepository.saveAll(Arrays.asList(u1));
 		
