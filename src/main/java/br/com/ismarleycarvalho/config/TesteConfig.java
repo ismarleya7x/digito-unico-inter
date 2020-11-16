@@ -25,16 +25,14 @@ public class TesteConfig implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		Usuario u1 = new Usuario(null, "Ismarley", "teste@teste.com");
+		Usuario u1 = new Usuario(null, "Ismarley", "teste0@teste.com");
+		Usuario u2 = new Usuario(null, "João", "teste1@teste.com");
+		Usuario u3 = new Usuario(null, "Maria", "teste2@teste.com");
+		Usuario u4 = new Usuario(null, "José", "teste3@teste.com");
 		
 		usuarioRepository.saveAll(Arrays.asList(u1));
 		
-		DigitoUnico du1 = new DigitoUnico("12345", 4, new Usuario());
-		DigitoUnico du2 = new DigitoUnico("678910", 4, u1);
-		DigitoUnico du3 = new DigitoUnico("111213", 4, u1);
-		DigitoUnico du4 = new DigitoUnico("12345", 4, new Usuario());
 		
-		digitoUnicoRepository.saveAll(Arrays.asList(du1, du2, du3, du4));
 		
 	}
 	
